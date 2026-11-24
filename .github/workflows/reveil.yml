@@ -1,0 +1,13 @@
+name: Réveil Supabase
+on:
+  schedule:
+    - cron: "17 8 * * 1,4"
+  workflow_dispatch:
+jobs:
+  reveil:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          curl -sS -f -X POST "https://zboxqfajlyqvxozrayab.supabase.co/rest/v1/rpc/reveil" \
+            -H "apikey: sb_publishable_cYrAhFjwXJhPk1Zfn7sYmQ_UXHchKyT" \
+            -H "Content-Type: application/json" -d '{}'
